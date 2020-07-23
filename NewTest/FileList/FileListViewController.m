@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = [self getTitleFromPath];
+    self.title = @"本地查看";//[self getTitleFromPath];
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.hud];
 }

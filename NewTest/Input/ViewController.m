@@ -141,7 +141,7 @@
     sshViewController.password = self.model.password;
     sshViewController.host = [NSString stringWithFormat:@"%@:%@",self.model.urlStr,self.model.portStr];
     sshViewController.username = self.model.account;
-    
+    sshViewController.title = @"远程登录";
     [self.navigationController pushViewController:sshViewController animated:YES];
 //    if (self.sftp.isConnected) {
 //        NSData *data = [self.sftp contentsAtPath:testFilePath];
