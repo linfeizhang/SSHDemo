@@ -32,7 +32,9 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 50;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.filesList.count;
 }
@@ -43,7 +45,8 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellStr];
     }
-    if (self.filesList[indexPath.row] != nil) {
+    if ((self.filesList!=nil)&&
+        (self.filesList[indexPath.row] != nil)) {
         cell.textLabel.text = self.filesList[indexPath.row];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -51,8 +54,13 @@
 }
 
 #pragma mark - TableViewDelegate
-
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.backgroundColor = [UIColor whiteColor];
+}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.backgroundColor = [UIColor lightGrayColor];
     NSString *fileName = self.filesList[indexPath.row];
     LocalFilesManager *manager = [LocalFilesManager shared];
     LocalFileType type = [manager getLocalFileTypeWithName:fileName];
@@ -123,6 +131,7 @@
         _tableView.dataSource = self;
         _tableView.tableHeaderView = [[UIView alloc]initWithFrame:CGRectZero];
         _tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
+        
     }
     return _tableView;
 }

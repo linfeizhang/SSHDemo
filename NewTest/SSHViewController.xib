@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SSHViewController">
             <connections>
+                <outlet property="textField" destination="r2p-4f-eJm" id="cs7-ni-7hn"/>
+                <outlet property="textView" destination="oPB-Ab-pqO" id="gTW-Mp-XYl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,39 +20,79 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mUs-7O-IcM">
-                    <rect key="frame" x="132" y="64" width="150" height="40"/>
-                    <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oPB-Ab-pqO">
+                    <rect key="frame" x="20" y="144" width="374" height="627"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="zpW-8d-Hgx"/>
+                    </connections>
+                </textView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="r2p-4f-eJm">
+                    <rect key="frame" x="20" y="74" width="374" height="50"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="EWH-R4-7Nq"/>
-                        <constraint firstAttribute="width" constant="150" id="YuJ-JB-Zfd"/>
-                        <constraint firstAttribute="width" secondItem="mUs-7O-IcM" secondAttribute="height" multiplier="15:4" id="gbM-fI-8se"/>
+                        <constraint firstAttribute="height" constant="50" id="7bt-eS-OUQ"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <state key="normal" title="打包">
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="zlE-9M-oPf"/>
+                    </connections>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mUs-7O-IcM">
+                    <rect key="frame" x="40" y="791" width="130" height="50"/>
+                    <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="EWH-R4-7Nq"/>
+                        <constraint firstAttribute="width" constant="130" id="YuJ-JB-Zfd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                    <state key="normal" title="save">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <state key="selected" title="save"/>
+                    <state key="highlighted" title="submit">
+                        <color key="titleColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
                     <connections>
-                        <action selector="GesysLogPath:" destination="-1" eventType="touchUpInside" id="tAD-I1-UPT"/>
+                        <action selector="save:" destination="-1" eventType="touchUpInside" id="nXO-L0-6c2"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Znc-SH-256">
-                    <rect key="frame" x="132" y="124" width="150" height="40"/>
-                    <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <state key="normal" title="打包">
+                    <rect key="frame" x="244" y="791" width="130" height="50"/>
+                    <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                    <state key="normal" title="submit">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <state key="selected">
+                        <color key="titleColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted" title="submit">
+                        <color key="titleColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="submit:" destination="-1" eventType="touchUpInside" id="mDC-vX-U3S"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="mUs-7O-IcM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4Tw-YX-vGc"/>
-                <constraint firstItem="Znc-SH-256" firstAttribute="top" secondItem="mUs-7O-IcM" secondAttribute="bottom" constant="20" id="N2j-ue-7vq"/>
-                <constraint firstItem="Znc-SH-256" firstAttribute="leading" secondItem="mUs-7O-IcM" secondAttribute="leading" id="OsR-oQ-0ME"/>
-                <constraint firstItem="mUs-7O-IcM" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="20" id="iS7-dN-QKk"/>
-                <constraint firstItem="Znc-SH-256" firstAttribute="height" secondItem="mUs-7O-IcM" secondAttribute="height" id="sf7-bl-Ywe"/>
-                <constraint firstItem="Znc-SH-256" firstAttribute="width" secondItem="mUs-7O-IcM" secondAttribute="width" id="z0b-9k-1wV"/>
+                <constraint firstItem="oPB-Ab-pqO" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="16A-Vp-hE9"/>
+                <constraint firstItem="r2p-4f-eJm" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="30" id="83D-NH-COs"/>
+                <constraint firstItem="mUs-7O-IcM" firstAttribute="leading" secondItem="r2p-4f-eJm" secondAttribute="leading" constant="20" id="EUq-hn-Xhv"/>
+                <constraint firstItem="oPB-Ab-pqO" firstAttribute="top" secondItem="r2p-4f-eJm" secondAttribute="bottom" constant="20" id="LIn-Ct-OsF"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="oPB-Ab-pqO" secondAttribute="trailing" constant="20" id="P4M-vc-oLg"/>
+                <constraint firstItem="mUs-7O-IcM" firstAttribute="top" secondItem="oPB-Ab-pqO" secondAttribute="bottom" constant="20" id="RiI-cl-gjm"/>
+                <constraint firstItem="Znc-SH-256" firstAttribute="trailing" secondItem="r2p-4f-eJm" secondAttribute="trailing" constant="-20" id="Th9-iq-CT2"/>
+                <constraint firstItem="Znc-SH-256" firstAttribute="width" secondItem="mUs-7O-IcM" secondAttribute="width" id="W9K-j8-qPE"/>
+                <constraint firstItem="r2p-4f-eJm" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="X1v-b5-epx"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="r2p-4f-eJm" secondAttribute="trailing" constant="20" id="bdd-X3-SQR"/>
+                <constraint firstItem="Znc-SH-256" firstAttribute="centerY" secondItem="mUs-7O-IcM" secondAttribute="centerY" id="dd5-q9-J6Y"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="mUs-7O-IcM" secondAttribute="bottom" constant="21" id="eeJ-OH-P2O"/>
+                <constraint firstItem="Znc-SH-256" firstAttribute="height" secondItem="mUs-7O-IcM" secondAttribute="height" id="mb0-dI-jnf"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="131.8840579710145" y="98.4375"/>

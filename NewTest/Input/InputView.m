@@ -121,9 +121,9 @@
     
     [self addSubview:self.downloadBtn];
     [self.downloadBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(30);
+        make.centerX.mas_offset(0);
         make.height.mas_equalTo(50);
-        make.bottom.mas_equalTo(-150);
+        make.bottom.mas_equalTo(-50);
         make.width.mas_equalTo(btnWidth);
     }];
 
@@ -207,7 +207,7 @@
         _downloadBtn = [[UIButton alloc]init];
         _downloadBtn.backgroundColor = [UIColor grayColor];
         _downloadBtn.tag = 1;
-        [_downloadBtn setTitle:@"下载" forState:UIControlStateNormal];
+        [_downloadBtn setTitle:@"远程登录" forState:UIControlStateNormal];
         [_downloadBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
         [_downloadBtn addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -219,7 +219,7 @@
         _linkBtn = [[UIButton alloc]init];
         _linkBtn.backgroundColor = [UIColor grayColor];
         _linkBtn.tag = 2;
-        [_linkBtn setTitle:@"连接" forState:UIControlStateNormal];
+        [_linkBtn setTitle:@"远程浏览" forState:UIControlStateNormal];
         [_linkBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
         [_linkBtn addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -231,7 +231,7 @@
         _lookLocalBtn = [[UIButton alloc]init];
         _lookLocalBtn.tag = 3;
         _lookLocalBtn.backgroundColor = [UIColor grayColor];
-        [_lookLocalBtn setTitle:@"查看" forState:UIControlStateNormal];
+        [_lookLocalBtn setTitle:@"本地查看" forState:UIControlStateNormal];
         [_lookLocalBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
         [_lookLocalBtn addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
     }

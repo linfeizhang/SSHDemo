@@ -138,6 +138,9 @@
 
 - (void)downFromSFTP {
     SSHViewController * sshViewController = [[SSHViewController alloc]init];
+    sshViewController.password = self.model.password;
+    sshViewController.host = [NSString stringWithFormat:@"%@:%@",self.model.urlStr,self.model.portStr];
+    sshViewController.username = self.model.account;
     
     [self.navigationController pushViewController:sshViewController animated:YES];
 //    if (self.sftp.isConnected) {
