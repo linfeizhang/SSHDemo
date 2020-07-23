@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-NewTest/Pods-NewTest-frameworks.sh
+${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework
+${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework
+${BUILT_PRODUCTS_DIR}/NMSSH/NMSSH.framework
